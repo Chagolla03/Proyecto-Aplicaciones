@@ -43,16 +43,32 @@
       return $this->nombre;
     }
 
-    public function getApaterno() {
-      return $this->apaterno;
+    public function getCalle() {
+      return $this->calle;
     }
 
-    public function getAmaterno() {
-      return $this->amaterno;
+    public function getNo_ext() {
+      return $this->no_ext;
     }
 
-    public function getDireccion() {
-      return $this->direccion;
+    public function getNo_int() {
+      return $this->no_int;
+    }
+
+    public function getColonia() {
+      return $this->colonia;
+    }
+
+    public function getCp() {
+      return $this->cp;
+    }
+
+    public function getCiudad() {
+      return $this->ciudad;
+    }
+
+    public function getEstado() {
+      return $this->estado;
     }
 
     public function getTelefono() {
@@ -61,6 +77,10 @@
 
     public function getCorreo() {
       return $this->correo;
+    }
+
+    public function getRfc() {
+      return $this->rfc;
     }
 
     public function getUsuario() {
@@ -82,16 +102,32 @@
       $this->nombre = $nombre;
     }
 
-    public function setApaterno($apaterno) {
-      $this->apaterno = $apaterno;
+    public function setCalle($calle) {
+      $this->calle = $calle;
     }
 
-    public function setAmaterno($amaterno) {
-      $this->amaterno = $amaterno;
+    public function setNo_ext($no_ext) {
+      $this->no_ext = $no_ext;
     }
 
-    public function setDireccion($direccion) {
-      $this->direccion = $direccion;
+    public function setNo_int($no_int) {
+      $this->no_int = $no_int;
+    }
+
+    public function setColonia($colonia) {
+      $this->colonia = $colonia;
+    }
+
+    public function setCp($cp) {
+      $this->cp = $cp;
+    }
+
+    public function setCiudad($ciudad) {
+      $this->ciudad = $ciudad;
+    }
+
+    public function setEstado($estado) {
+      $this->estado = $estado;
     }
 
     public function setTelefono($telefono) {
@@ -102,6 +138,10 @@
       $this->correo = $correo;
     }
 
+    public function setRfc($rfc) {
+      $this->rfc = $rfc;
+    }
+
     public function setUsuario($usuario) {
       $this->usuario = $usuario;
     }
@@ -109,5 +149,6 @@
     public function setPassword($password) {
       $this->password = $password;
     }
+
 }
 ?>
