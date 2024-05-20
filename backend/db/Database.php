@@ -1,8 +1,10 @@
 <?php
 
 class Database {
+  //aatributo privado que se usará para almacenar la conexión a la base de datos
   private $conn;
 
+  //El constructor se ejecuta automaticamente cuando se crea una instancia de la clase Database
   public function __construct () {
     $this->conn = new mysqli('localhost:8889', 'root', 'root', 'renta_carros' );
 
@@ -11,6 +13,7 @@ class Database {
     }
   }
 
+  //Devolvemos la conexión a la base de datos
   public function getConnection() {
     return $this->conn;
   }
