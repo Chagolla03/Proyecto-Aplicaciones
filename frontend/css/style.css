@@ -1,0 +1,69 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  background: #f3f3f3;
+  flex-direction: column;
+  margin: 0;
+}
+
+.main {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  transition: transform 0.2s;
+  width: 500px;
+  text-align: center;
+}
+
+h1 {
+  color: #4CAF50;
+}
+
+label {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #555;
+  font-weight: bold;
+}
+
+input {
+  display: block; /*Hace que cada elemento sea como bloques haciendo que cada uno ocupe una nueva linea*/
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px; /*Para hacer mas ancho la caja del input*/
+  box-sizing: border-box; /*Para que el input se ajuste al tamaño de la caja*/
+  border: 1px solid #ddd; /*Para establecer el color de la caja del input*/
+  border-radius: 30px; /*Que tan curvo va a estar la caja del input*/
+}
+
+button {
+  padding: 15px; /*el ancho del botón iniciar sesión*/
+  border-radius: 30px;
+  margin-top: 15px; /*Margen de arriba del boton*/
+  margin-bottom: 15px; /*Margen de abajo del boton*/
+  margin-left: 5px;
+  border: none; /*Le quitamos el borde*/
+  color: white; /*El color de las letras es blanco*/
+  cursor: pointer; /*Cuando el mouse seleccione el boton este cambiara la manita*/
+  background-color: #4CAF50; /*Color del botón*/
+  width: 100%; /*Para que ocupe todo el ancho del contenedor*/
+  font-size: 16px;
+}
+
+.Registro {
+  background-color: gold;
+}
+
+.btn-sesion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

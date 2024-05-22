@@ -141,7 +141,7 @@
     public function setRfc($rfc) {
       $this->rfc = $rfc;
     }
-
+    
     public function setUsuario($usuario) {
       $this->usuario = $usuario;
     }
