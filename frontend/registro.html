@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="main">
+    <h1>Registrar</h1>
+  <form id="registrarForm" method="POST" action="../backend/index.php">
+    <input type="hidden" name="accion" value="registrar">
+
+    <label for="usuario"></label>
+    <input title="Solo puedes ingresar letras (mínimo 4)" pattern="^[A-Za-zÀ-ÿ\s]{4,}$" type="text" name="nombre" required id="nombre" placeholder="Ingresa tu nombre">
+
+    <label for="usuario"></label>
+    <input title="Solo puedes ingresar letras (mínimo 4)" pattern="^[A-Za-zÀ-ÿ\s]{4,}$" type="text" name="apellido" required id="apellido" placeholder="Ingresa tu apellido">
+    
+    <label for="usuario"></label>
+    <!--Expresión regular para que solo permita números de México-->
+    <input title="Número incorrecto" pattern="^(?:\+52)? ?(?:\d{2,3})? ?\d{8}$" type="text" name="telefono" required id="telefono" placeholder="Ingresa tu número celular sin espacios(solo para México)">
+
+    <label for="usuario"></label>
+    <input title="correo no válido" type="email" name="correo" required id="correo" placeholder="Ingresa tu correo electrónico">
+
+    <label for="usuario"></label>
+    <!--El usuario empieze con un caracter y despues cualquier cosa pero con un mínimo de 8 caracteres-->
+    <input title="Usuario no válido" pattern="^[A-Za-z][A-Za-z0-9_.]{7,14}$" type="text" name="usuario" required id="usuario" placeholder="Ingresa tu usuario (empezando con una letra y mín. 8 caracteres)">
+
+    <label for="password"></label>
+    <input title="Al menos 8 caracteres" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" type="password" name="password" required id="password" placeholder="Ingresa tu contraseña">
+    <p>La contraseña debe ser de al menos 8 caracteres</p> <br> (mínimo 1 letra minúscula, 1 mayúscula, 1 número y un caracter especial)
+
+    <div class="btn-submit">
+    <button type="submit">Registrar</button>
+    </div>
+    
+    <!--<input type="submit" value="Registrar">-->
+    
+  </form>
+
+  <script src="./js/app.js"></script>
+</div>
+</body>
+</html>
