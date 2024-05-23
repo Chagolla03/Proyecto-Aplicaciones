@@ -10,6 +10,8 @@ switch ($_SERVER["REQUEST_METHOD"]) {
     $accion = $_POST['accion'];
     if($accion == 'registrar'){
       $userControler->registrar();
+    } else if($accion == 'login'){
+      $userControler->login();
     }
     break;
 }

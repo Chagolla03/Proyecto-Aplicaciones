@@ -55,9 +55,21 @@ class UserService Implements UserInterface {
 
 //Función por probar
 public function login($usuario, $password){
-  $sql_usuario = "SELECT * FROM cliente WHERE cli_usuario = '$usuario'";
+  $sql_usuario = "SELECT * FROM cliente WHERE cli_usuario = ?";
 
-  $result = $this->db->query($sql_usuario);
+  $stm = $this->db->prepare($sql_usuario);
+
+  //si 'prepare' falla retornamos false.
+  if($stm === false){
+    //Error al preparar la consulta
+    error_log("Error preparando la consulta: " . $this->db->error);
+    return false;
+  }
+
+  $stm->bind_param('s', $usuario);
+  $stm->execute();
+  $result = $stm->get_result();
+
   if ($result->num_rows == 1){ //si encontro al usuario devuelve solo 1 fila
     $user = $result->fetch_assoc(); //se obtienen los datos del usuario en forma de array asociativo.
     if(password_verify($password, $user['cli_contra'])){ //comparamos la contraseña proporcionada con la contraseña almacenada en la base de datos

@@ -35,6 +35,28 @@ class UserController {
     }
   }
 
+  public function login() {
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+      $usuario = $_POST['username'];
+      $password = $_POST['password'];
+
+      //alidamos que no esten vacios
+      if(!empty($usuario) && !empty($password)){
+        $user = $this->userService->login($usuario, $password)
+        if($user){
+          //redirigir a otra página
+          echo json_encode(array("success" => true, "message" => "Inicio Satisfactorio"));
+        } else {
+          echo json_encode(array("success" => false, "message" => "Credenciales Incorrectas"));
+        }
+      } else {
+        echo json_encode(array("success" => false, "message" => "Faltan Datos"));
+      }
+    } else {
+      echo json_encode(array("success" => false, "message" => "Tipo de petición incorrecta"));
+    }
+  }
+
 }
 
 ?>

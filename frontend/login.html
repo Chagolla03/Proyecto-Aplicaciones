@@ -12,7 +12,8 @@
     <div class="container">
         <h1 class="login-header">Login</h1>
         <div class="login-container">
-            <form action="#">
+            <form id="loginForm" method="POST" action="../backend/index.php">
+                <input type="hidden" name="accion" value="login">
                 <div class="form-group">
                     <input type="text" id="username" name="username" placeholder="Usuario" required>
                     <i class="fas fa-user"></i>
