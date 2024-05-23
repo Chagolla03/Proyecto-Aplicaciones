@@ -15,23 +15,16 @@ class UserService Implements UserInterface {
 
   public function registrarUsuario($usuario){
     $nombre = $usuario->getNombre();
-    $calle = $usuario->getCalle();
-    $no_ext = $usuario->getNo_ext();
-    $no_int = $usuario->getNo_int();
-    $colonia = $usuario->getColonia();
-    $cp = $usuario->getCp();
-    $ciudad = $usuario->getCiudad();
-    $estado = $usuario->getEstado();
+    $apellido = $usuario->getApellido();
     $telefono = $usuario->getTelefono();
     $correo = $usuario->getCorreo();
-    $rfc = $usuario->getRfc();
     $username = $usuario->getUsuario();
     //encriptamos la constraseña
     $password = password_hash($usuario->getPassword(), PASSWORD_DEFAULT);  
 
     //Hacemos la consulta SQL para evitar inyecciones
-    $sql_insertar = "INSERT INTO cliente(cli_id, cli_nombre, cli_dir_calle, cli_dir_no_ext, cli_dir_no_int, cli_dir_col, cli_dir_cp, cli_dir_ciudad, cli_dir_estado, cli_telefono, cli_correo, cli_rfc, cli_usuario, cli_contra)
-                      VALUES(null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql_insertar = "INSERT INTO cliente(cli_id, cli_nombre, cli_apellido, cli_telefono, cli_correo, cli_usuario, cli_contra)
+                      VALUES(null, ?, ?, ?, ?, ?, ?)";
 
     //Preparamos la sentencia para ejecutar la consulta
     $stm = $this->db->prepare($sql_insertar);
@@ -45,7 +38,7 @@ class UserService Implements UserInterface {
 
     //Vinculamos los parámetros de la consulta preparada
     // 's' indica que el parámetro es una cadena
-    $stm->bind_param('sssssssssssss', $nombre, $calle, $no_ext, $no_int, $colonia, $cp, $ciudad, $estado, $telefono, $correo, $rfc, $username, $password);
+    $stm->bind_param('ssssss', $nombre, $apellido, $telefono, $correo, $username, $password);
 
     //Ejecutamos la consulta
     if($stm->execute()){

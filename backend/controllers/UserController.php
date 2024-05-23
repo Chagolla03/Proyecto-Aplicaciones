@@ -14,20 +14,18 @@ class UserController {
 
     //definimos los datos que se envian desde el formulario html, en 'name'
     $nombre = $_POST['nombre'];
-    $calle = $_POST['calle'];
-    $no_ext = $_POST['no_ext'];
-    $no_int = $_POST['no_int'];
-    $colonia = $_POST['colonia'];
-    $cp = $_POST['cp'];
-    $estado = $_POST['estado'];
-    $ciudad = $_POST['ciudad'];
+    $apellido = $_POST['apellido'];
     $telefono = $_POST['telefono'];
     $correo = $_POST['correo'];
-    $rfc = $_POST['rfc'];
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
 
-    $usuarioNuevo = new User ($nombre, $calle, $no_ext, $no_int, $colonia, $cp, $ciudad, $estado, $telefono, $correo, $rfc, $usuario, $password);
+    if(!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+      echo json_encode(array("success" => false, "message" => "Correo no válido"));
+      return;
+    }
+
+    $usuarioNuevo = new User ($nombre, $apellido, $telefono, $correo, $usuario, $password);
     $resultado = $this->userService->registrarUsuario($usuarioNuevo);
 
     if($resultado){
