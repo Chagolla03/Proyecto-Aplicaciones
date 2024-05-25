@@ -6,7 +6,7 @@ class Database {
 
   //El constructor se ejecuta automaticamente cuando se crea una instancia de la clase Database
   public function __construct () {
-    $this->conn = new mysqli('localhost:8889', 'root', 'root', 'renta_carros' );
+    $this->conn = new mysqli('localhost:3306', 'root', 'root', 'renta_carros' );
 
     if ($this->conn->connect_error){
       die('Error de Conexión' .$this->conn->connect_error);

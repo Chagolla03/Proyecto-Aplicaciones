@@ -80,5 +80,4 @@ public function login($usuario, $password){
 }
 
 }
-
 ?>
