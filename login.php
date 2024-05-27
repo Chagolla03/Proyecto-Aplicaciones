@@ -27,7 +27,7 @@
 
       if($user){
         if(password_verify($pass, $user["cli_contra"])){
-          header("Location: prueba.php");
+          header("Location: index.html");
           die();
         } else {
           echo "<div class='alert alert-danger'>La contraseña no coincide</div>";

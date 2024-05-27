@@ -69,6 +69,7 @@
           $stmt->execute([$name, $last_name, $email, $pass_hash]);
 
           echo "<div class='alert alert-success'>Usuario registrado con éxito</div>";
+          header("Location: login.php");
 
         } catch (PDOException $e) {
           echo "<div class='alert alert-danger'>Error al insertar los datos: " . $e->getMessage() . "</div>";

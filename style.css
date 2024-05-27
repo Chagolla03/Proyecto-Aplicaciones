@@ -1,5 +1,6 @@
 body {
   padding: 50px;
+  background: linear-gradient(to bottom right, #1a2228, #36424a, #a1b6c4);
 }
 
 .container {
