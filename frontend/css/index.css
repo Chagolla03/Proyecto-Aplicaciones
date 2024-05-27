@@ -1,0 +1,322 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)); /* Degradado desde negro transparente a negro sólido */
+    color: #050505;
+    padding: 33px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif; /* Fuente más delgada */
+    /* Ajustes para letra más delgada y llamativa */
+    font-size: 2.5rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* Sombra del texto para crear un efecto de brillo */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.title h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.title p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-container {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 6rem; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 90%);
+    filter: grayscale(40%) brightness(80%) contrast(120%);
+}
+
+.image-container img {
+    max-width: 100%;
+    height: 30%;
+}
+
+nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(52, 53, 52, 0.7);
+    padding: 1.2rem; /* Ajusta el espacio entre los elementos del menú */
+    border-radius: 20px;
+    z-index: 1; /* Asegura que el menú esté sobre la imagen */
+    width: 50%; /* Ajusta el ancho del menú */
+    text-align: center; /* Centra los elementos del menú */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+}
+
+nav ul {
+    list-style: none;
+    display: block; /* Cambia la visualización a "block" */
+}
+
+nav ul li {
+    display: block; /* Cambia la visualización a "block" */
+    margin: 0.5rem 0; /* Aumenta el espacio entre los elementos del menú */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Añade una transición suave */
+    padding: 0.8rem 1.8rem; /* Ajusta el espacio alrededor del enlace */
+    border-radius: 20px; /* Hace los botones del menú más redondeados */
+    font-size: 1.2rem; /* Ajusta el tamaño de la fuente */
+    display: block; /* Hace que los enlaces ocupen todo el ancho del contenedor */
+    border: 2px solid transparent; /* Agrega un borde transparente */
+}
+
+nav ul li a:hover {
+    color: #000000;
+    background-color: #ffffff;
+    transform: scale(1.0); /* Aumenta ligeramente el tamaño al pasar el cursor */
+    border-color: #ffffff; /* Cambia el color del borde al pasar el cursor */
+}
+
+/* Estilos para la sección "Acerca de Nosotros" */
+.about {
+    padding: 2rem; 
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)); /* Degradado */
+    margin: 2rem 2rem 2rem; /* Reducir el margen superior */
+    border-radius: 30px;
+    box-shadow: 0 10px 3px rgba(0, 0, 0, 0.1);
+    height: 600px;
+    margin-bottom: 6rem;
+}
+
+.about-container {
+    text-align: absolute;
+}
+
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #000000; 
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: justify;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 350px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 2;
+    font-size: 1.3rem;
+    color: #000000; 
+    text-align: left;
+}
+
+.about-text p {
+    margin: 20;
+}
+
+.content {
+    padding: 2rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    box-shadow: 0 10px 3px rgba(0, 0, 0, 0.1);
+    margin: 3rem 2rem 2rem;
+    border-radius: 30px;
+    position: relative;
+    height: 2670px; /* Ajusta la altura según tu preferencia */
+}
+
+.content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    font-size: 1.1rem;
+}
+
+/* Estilos adicionales para los apartados con imágenes y descripciones */
+.service-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem; /* Añadir margen superior para separar del texto */
+}
+
+.service-box {
+    perspective: 1000px;
+    width: 400px; /* Ancho fijo para cada cuadro */
+    height: 450px; /* Altura fija para cada cuadro */
+    margin: 1rem;
+    cursor: pointer; /* Cambia el cursor al pasar sobre la caja */
+}
+
+.service-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.service-box.flip .service-inner {
+    transform: rotateY(180deg);
+}
+
+.service-front, .service-back {
+    position: absolute;
+    width: 100%;
+    height: 100%; /* Asegura que ambos lados tengan la misma altura */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-front {
+    background: #ffffff;
+    text-align: center;
+}
+
+.service-front img {
+    width: 100%;
+    height: 75%; /* Aumenta la altura de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    border-bottom: 1px solid #ddd;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.service-front p {
+    padding: 0.8rem 1rem; /* Reduce el espacio del texto */
+    font-size: 1rem;
+    color: #333;
+}
+
+.service-front .category {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0.3rem;
+}
+
+.service-back {
+    background: #f8f8f8;
+    color: #333;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center; /* Asegura que el texto en el reverso esté centrado */
+}
+
+.service-back p {
+    font-size: 1rem;
+}
+
+.service-back {
+    background: #f8f8f8;
+    color: #333;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+/* boton trasero renta */
+
+.service-back p {
+    margin-bottom: 1rem; /* Espacio debajo del texto para el botón */
+    font-size: 1rem;
+}
+
+.rent-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #ff0000;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Añade una transición suave */
+    text-align: center; /* Asegura que el texto del botón esté centrado */
+}
+
+.rent-button:hover {
+    background-color: #cc0000;
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}
+
+
+
+/* Scroll menu  */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .service-box {
+        width: calc(50% - 2rem); /* Dos cuadros por fila en pantallas más pequeñas */
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+}
