@@ -38,9 +38,8 @@
     }
     ?>
 
-
     <form action="login.php" method="post">
-
+    <h1 class="login-header">Iniciar sesión</h1>
       <div class="form-group">
         <input type="email" placeholder="Ingresa tu correo electónico" name="email" class="form-control">
       </div>
@@ -52,8 +51,11 @@
       <div class="form-btn">
         <input type="submit" value="Iniciar Sesión" name="login" class="btn btn-primary">
       </div>
+      <div class="register-link">
+            ¿No tienes una cuenta? <a href="registro.html" id="SignUp" >Regístrate</a>
+        </div>
 
     </form>
-  </div>
+
 </body>
 </html>

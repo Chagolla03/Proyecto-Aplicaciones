@@ -1,16 +1,14 @@
 body {
-<<<<<<< HEAD
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: sans-serif;
     line-height: 1.5;
     min-height: 100vh;
-    background: linear-gradient(to bottom right, #1a2228, #36424a, #a1b6c4);
+    background: #fffdfd;
     flex-direction: column;
     margin: 0;
   }
-
   
   .main {
     background-color: rgb(253, 254, 255);
@@ -22,7 +20,8 @@ body {
   }
   
   h1 {
-    color: #4CAF50;
+    color: #1ea4cd;
+    position: relative;
   }
   
   label {
@@ -45,19 +44,6 @@ body {
     border-radius: 30px; /*Que tan curvo va a estar la caja del input*/
   }
   
-  button {
-    padding: 15px; /*el ancho del botón iniciar sesión*/
-    border-radius: 30px;
-    margin-top: 15px; /*Margen de arriba del boton*/
-    margin-bottom: 15px; /*Margen de abajo del boton*/
-    margin-left: 5px;
-    border: none; /*Le quitamos el borde*/
-    color: white; /*El color de las letras es blanco*/
-    cursor: pointer; /*Cuando el mouse seleccione el boton este cambiara la manita*/
-    background-color: #4CAF50; /*Color del botón*/
-    width: 100%; /*Para que ocupe todo el ancho del contenedor*/
-    font-size: 16px;
-  }
   
   .Registro {
     background-color: gold;
@@ -84,24 +70,19 @@ body {
 }
 
 .register-link a {
-    color: #78c778; /* Color verde para el enlace */
+    color: #1ea4cd; /* Color verde para el enlace */
     text-decoration: none;
 }
 
 .register-link a:hover {
-    text-decoration: underline; /* Subrayado al pasar el cursor */
-=======
+  text-decoration: underline; /* Subrayado al pasar el cursor */
   padding: 50px;
 }
 
 .container {
   max-width: 600px;
   margin: 0 auto;
+  border-radius: 15px;
   padding: 50px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-.form-group {
-  margin-bottom: 30px;
->>>>>>> devlop/jorge
 }

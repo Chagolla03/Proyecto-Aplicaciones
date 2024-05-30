@@ -1,7 +1,7 @@
 <?php
 
 //definimos las variables para la conexión
-$dsn = "mysql:host=localhost:8889;dbname=rentas;charset=utf8";
+$dsn = "mysql:host=localhost:3306;dbname=rentas;charset=utf8";
 $username = "root";
 $password = "root";
 
