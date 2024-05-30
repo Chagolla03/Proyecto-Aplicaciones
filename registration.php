@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration form</title>
+  <title>Add cars</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <div class="container">
     <?php
-    if(isset($_POST["submit"])){
-      $name = $_POST["name"];
-      $last_name = $_POST["last_name"];
-      $email = $_POST["email"];
-      $pass = $_POST["password"];
-      $rep_pass = $_POST["repeat_password"];
+    if(isset($_POST['submit'])){
+      $name = $_POST['name'];
+      $last_name = $_POST['last_name'];
+      $email = $_POST['email'];
+      $pass = $_POST['password'];
+      $rep_pass = $_POST['repeat_password'];
 
       $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
 
@@ -39,9 +39,10 @@
 
       //para validar que no se repitan correos ya registrados
       require_once "database.php";
-      // obtenermos el número de filas que coincidan con el correo electrónico dado.
+
+      // obtenemos el número de filas que coincidan con el correo electrónico dado.
       $sql = "SELECT COUNT(*) FROM cliente WHERE cli_correo = :email";
-      $stmt = $conn->prepare($sql);
+      $stmt = $pdo->prepare($sql);
       $stmt->bindParam(':email', $email, PDO::PARAM_STR);
       $stmt->execute();
 
@@ -60,13 +61,19 @@
         }
       } else {
         try {
-          $sql_insert = "INSERT INTO cliente(cli_nombre, cli_apellido, cli_correo, cli_contra)
-                    VALUES ( ?, ?, ?, ?)";
+          $sql_insert = 'INSERT INTO cliente(cli_nombre, cli_apellido, cli_correo, cli_contra)
+                    VALUES ( :name, :last_name, :email, :rep_pass)';
                     
-          $stmt = $conn->prepare($sql_insert);
+          $stmt = $pdo->prepare($sql_insert);
 
           // Ejecutar la declaración con los datos
-          $stmt->execute([$name, $last_name, $email, $pass_hash]);
+          $stmt->bindParam(':name', $name);
+          $stmt->bindParam(':last_name', $last_name);
+          $stmt->bindParam(':email', $email);
+          $stmt->bindParam(':rep_pass', $pass_hash);
+
+          //Ejecutamos la consulta
+          $stmt->execute();
 
           echo "<div class='alert alert-success'>Usuario registrado con éxito</div>";
           header("Location: login.php");
@@ -74,11 +81,7 @@
         } catch (PDOException $e) {
           echo "<div class='alert alert-danger'>Error al insertar los datos: " . $e->getMessage() . "</div>";
         }
-
-
       }
-
-
     }
     ?>
     
