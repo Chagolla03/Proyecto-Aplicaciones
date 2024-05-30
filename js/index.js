@@ -7,3 +7,26 @@ serviceBoxes.forEach(box => {
         box.classList.toggle('flip');
     });
 });
+
+function filterServices(category) {
+    const serviceBoxes = document.querySelectorAll('.service-box');
+    serviceBoxes.forEach(box => {
+        if (box.classList.contains(category) || category === 'all') {
+            box.style.display = 'block';
+        } else {
+            box.style.display = 'none';
+        }
+    });
+}
+
+
+function filterServices(category) {
+    const serviceBoxes = document.querySelectorAll('.service-box');
+    serviceBoxes.forEach(box => {
+        if (category === 'all' || box.classList.contains(category)) {
+            box.style.display = 'block';
+        } else {
+            box.style.display = 'none';
+        }
+    });
+}
