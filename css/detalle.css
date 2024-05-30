@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -81,10 +82,95 @@ nav ul li a:hover {
     background-color: #ffffff;
     transform: scale(1.0); /* Aumenta ligeramente el tamaño al pasar el cursor */
     border-color: #ffffff; /* Cambia el color del borde al pasar el cursor */
+=======
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #1a2228, #36424a, #a1b6c4);
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: relative;
+  color: #ffffff;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 15px;
+  margin-top: 5px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)); /* Degradado desde negro transparente a negro sólido */
+  color: #050505;
+  padding: 33px;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif; /* Fuente más delgada */
+  /* Ajustes para letra más delgada y llamativa */
+  font-size: 2.5rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* Sombra del texto para crear un efecto de brillo */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.title h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.title p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(52, 53, 52, 0.7);
+  padding: 1.2rem; /* Ajusta el espacio entre los elementos del menú */
+  border-radius: 20px;
+  z-index: 1; /* Asegura que el menú esté sobre la imagen */
+  width: 50%; /* Ajusta el ancho del menú */
+  text-align: center; /* Centra los elementos del menú */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+}
+
+nav ul {
+  list-style: none;
+  display: block; /* Cambia la visualización a "block" */
+}
+
+nav ul li {
+  display: block; /* Cambia la visualización a "block" */
+  margin: 0.5rem 0; /* Aumenta el espacio entre los elementos del menú */
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Añade una transición suave */
+  padding: 0.8rem 1.8rem; /* Ajusta el espacio alrededor del enlace */
+  border-radius: 20px; /* Hace los botones del menú más redondeados */
+  font-size: 1.2rem; /* Ajusta el tamaño de la fuente */
+  display: block; /* Hace que los enlaces ocupen todo el ancho del contenedor */
+  border: 2px solid transparent; /* Agrega un borde transparente */
+}
+
+nav ul li a:hover {
+  color: #000000;
+  background-color: #ffffff;
+  transform: scale(1.0); /* Aumenta ligeramente el tamaño al pasar el cursor */
+  border-color: #ffffff; /* Cambia el color del borde al pasar el cursor */
+>>>>>>> devlop/jorge
 }
 
 
 main {
+<<<<<<< HEAD
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,3 +260,94 @@ p {
     margin: 0.5em 0;
     padding: 0 1em;
 }
+=======
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em 0;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-top: 2em;
+}
+
+.card {
+  width: 250px;
+  height: 350px;
+  perspective: 1000px;
+  margin: 1em;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.card-front {
+  background-color: #333;
+  color: white;
+}
+
+.card-back {
+  background-color: #fff;
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+.card img {
+  width: 80%;
+  height: auto;
+  margin: 1em 0;
+}
+
+button {
+  padding: 0.5em 1em;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+h2 {
+  margin: 0.5em 0;
+}
+
+p {
+  margin: 0.5em 0;
+  padding: 0 1em;
+}
+>>>>>>> devlop/jorge
