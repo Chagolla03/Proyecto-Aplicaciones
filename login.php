@@ -6,7 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<<<<<<< HEAD
+  <link rel="stylesheet" href="style.css">
+=======
   <link rel="stylesheet" href="./css/style.css">
+>>>>>>> devlop/jorge
 </head>
 <body>
   <div class="container">
@@ -18,8 +22,13 @@
 
       require_once "database.php";
       $sql_login = "SELECT * FROM cliente WHERE cli_correo = :email";
+<<<<<<< HEAD
+      $stmt = $conn->prepare($sql_login);
+      $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+=======
       $stmt = $pdo->prepare($sql_login);
       $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+>>>>>>> devlop/jorge
       $stmt->execute();
 
       //se obtiene el resultado como un array asociativo
