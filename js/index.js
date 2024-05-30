@@ -29,4 +29,8 @@ function filterServices(category) {
             box.style.display = 'none';
         }
     });
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> devlop/jorge
