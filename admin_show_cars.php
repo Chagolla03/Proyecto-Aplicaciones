@@ -56,10 +56,10 @@
               echo '<td>' . htmlspecialchars($carro['car_placas']) . '</td>';
               echo '<td><img src="data:image/jpeg;base64,' . base64_encode($carro['car_imagen']) . '" alt="Imagen del carro" style="width:100px; height:auto;"></td>';
               echo '<td>';
-              echo '<a class="btn btn-primary btn-sm" href="admin_edit_car.php?id=$carro[car_id]' . htmlspecialchars($carro['car_id']) . '">Edit</a> ';
-              echo '<a class="btn btn-danger btn-sm" href="admin_delete_car.php?id=$carro[car_id]' . htmlspecialchars($carro['car_id']) . '">Delete</a>';
+              echo '<a class="btn btn-primary btn-sm" href="admin_edit_car.php?id=' . htmlspecialchars($carro['car_id']) . '">Edit</a> ';
+              echo '<a class="btn btn-danger btn-sm" href="admin_delete_car.php?id=' . htmlspecialchars($carro['car_id']) . '">Delete</a>';
               echo '</td>';
-              echo '</tr>';
+              echo '<tr>';
           }
       } else {
           echo '<div class="alert alert-warning">No se encontraron registros.</div>';
