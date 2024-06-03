@@ -22,11 +22,7 @@
             </div>
             <div class="form-group">
                 <label for="cvv">CVV:</label>
-<<<<<<< HEAD
-                <input type="text" id="cvv" name="cvv" >
-=======
                 <input type="text" id="cvv" name="cvv" required>
->>>>>>> devlop/jorge
             </div>
             <div class="form-group">
                 <label for="cardHolderName">Nombre del Titular:</label>
@@ -37,8 +33,4 @@
     </div>
     <script src="js/pago.js"></script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> devlop/jorge

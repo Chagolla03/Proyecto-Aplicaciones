@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add cars</title>
+  <title>Registration form</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
   <div class="container">
     <?php
-    if(isset($_POST['submit'])){
-      $name = $_POST['name'];
-      $last_name = $_POST['last_name'];
-      $email = $_POST['email'];
-      $pass = $_POST['password'];
-      $rep_pass = $_POST['repeat_password'];
+
+    if(isset($_POST["submit"])){
+      $name = $_POST["name"];
+      $last_name = $_POST["last_name"];
+      $email = $_POST["email"];
+      $pass = $_POST["password"];
+      $rep_pass = $_POST["repeat_password"];
 
       $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
 
@@ -81,8 +83,8 @@
         } catch (PDOException $e) {
           echo "<div class='alert alert-danger'>Error al insertar los datos: " . $e->getMessage() . "</div>";
         }
-      }
     }
+  }
     ?>
     
     <form action="registration.php" method="post">

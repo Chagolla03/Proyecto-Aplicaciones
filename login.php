@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +11,15 @@
   <div class="container">
 
   <?php
-    if(isset($_POST["login"])){
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["login"])){
       $email = $_POST["email"];
       $pass = $_POST["password"];
 
       require_once "database.php";
       $sql_login = "SELECT * FROM cliente WHERE cli_correo = :email";
+      $stmt = $conn->prepare($sql_login);
+      $stmt->bindParam(":email", $email, PDO::PARAM_STR);
       $stmt = $pdo->prepare($sql_login);
       $stmt->bindParam(':email', $email, PDO::PARAM_STR);
       $stmt->execute();
@@ -38,8 +40,9 @@
     }
     ?>
 
+
     <form action="login.php" method="post">
-    <h1 class="login-header">Iniciar sesión</h1>
+
       <div class="form-group">
         <input type="email" placeholder="Ingresa tu correo electónico" name="email" class="form-control">
       </div>
@@ -51,11 +54,8 @@
       <div class="form-btn">
         <input type="submit" value="Iniciar Sesión" name="login" class="btn btn-primary">
       </div>
-      <div class="register-link">
-            ¿No tienes una cuenta? <a href="registro.html" id="SignUp" >Regístrate</a>
-        </div>
 
     </form>
-
+  </div>
 </body>
 </html>

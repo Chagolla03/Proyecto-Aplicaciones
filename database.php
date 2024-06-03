@@ -7,6 +7,10 @@ $password = "root";
 
 try {
   // PDO = PHP Data Objects
+  $conn = new PDO($dsn, $username, $password);
+  
+  // conn ya no es una variable, ya es un objeto
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $pdo = new PDO($dsn, $username, $password);
   
   // conn ya no es una variable, ya es un objeto

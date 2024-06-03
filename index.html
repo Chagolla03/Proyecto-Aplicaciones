@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renta de Autos</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="../frontend/css/index.css">
-</head>
-<body>
-    <header>
-        <div class="title">
-            <h1>Renta de Autos</h1>
-            <p>Encuentra el auto perfecto para tu viaje</p>
-        </div>
-=======
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/index.css">
+    <style>
+        .card-custom {
+            background-color: #f8f9fa; /* Gris desvanecido */
+        }
+        .card-custom img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .filter-buttons .btn {
+            margin: 0.5rem;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,34 +32,21 @@
                     <li><a href="#about">Acerca de</a></li>
                     <li><a href="#services">Servicios</a></li>
                     <li><a href="#contact">Contacto</a></li>
+                    <li><a href="login.php">Iniciar Sesion</a></li>
+                    
                 </ul>
             </div>
         </nav>
->>>>>>> devlop/jorge
     </header>
     
     <div class="hero-container">
         <div class="image-container">
-<<<<<<< HEAD
-            <img src="../frontend/assets/c1.png" alt="Imagen de ejemplo">
-        </div>
-        
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#about">Acerca de</a></li>
-                <li><a href="#services">Servicios</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-=======
             <div class="title">
                 <h1>Renta de Autos BJX</h1>
                 <p>Encuentra el auto perfecto para tu viaje</p>
             </div>
             <img src="./assets/c1.png" alt="Imagen de ejemplo">
         </div>
->>>>>>> devlop/jorge
     </div>
     
     <section id="about" class="about">
@@ -63,362 +54,76 @@
             <h2>Acerca de Nosotros</h2>
             <div class="about-content">
                 <div class="about-image">
-<<<<<<< HEAD
-                    <img src="../frontend/assets/c4.jpg" alt="Acerca de nosotros">
-                </div>
-                <div class="about-text">
-                    <p>Somos una empresa dedicada a proporcionar los mejores vehículos para cualquier necesidad de transporte En el estado de Guanajuato. 
-=======
                     <img src="./assets/c4.jpg" alt="Acerca de nosotros">
                 </div>
                 <div class="about-text">
                     <p>Somos una empresa dedicada a proporcionar los mejores vehículos para cualquier necesidad de transporte en el estado de Guanajuato. 
->>>>>>> devlop/jorge
                         Con años de experiencia en el mercado, garantizamos la satisfacción de nuestros clientes ofreciendo un servicio de calidad y vehículos de alta gama.</p>
                 </div>
             </div>
         </div>
     </section>
-<<<<<<< HEAD
-    
-=======
 
-    <section id="categories" class="categories">
-        <h2>Categorías</h2>
-        <div class="category-buttons">
-            <button onclick="filterServices('all')">Todos</button>
-            <button onclick="filterServices('luxury')">Automóvil de Lujo</button>
-            <button onclick="filterServices('intermediate')">Automóvil Intermedio</button>
-            <button onclick="filterServices('electric')">Automóvil Eléctrico</button>
-            <button onclick="filterServices('luxurySUV')">Camioneta de Lujo</button>
-            <button onclick="filterServices('intermediateSUV')">Camioneta Intermedia</button>
-        </div>
-    </section>
->>>>>>> devlop/jorge
+    
+    <?php
+      include_once "database.php";
+
+      try{
+        //Realizamos la consulta
+        $sql_select = 'SELECT * FROM carro';
+        $stmt = $pdo->prepare($sql_select);
+        $stmt->execute();
+
+        //recuperamos los datos
+        $carros = $stmt->fetchAll(PDO::FETCH_ASSOC);        
+      } catch(PDOException $e){
+        echo "Error en la consulta: " . $e->getMessage();
+      }
+      ?>
+
+
 
     <section id="services" class="content">
         <h2>Nuestros Servicios</h2>
         <p>Ofrecemos una amplia variedad de vehículos para todas tus necesidades de transporte.</p>
-        
-<<<<<<< HEAD
-        <!-- Apartados con imágenes y descripciones -->
-        <div class="service-container">
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c2.jpg" alt="Coche 1">
-=======
-        <div class="service-container">
-            <div class="service-box luxury">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c2.jpg" alt="Coche 1">
->>>>>>> devlop/jorge
-                        <p>Mustang 2024</p>
-                        <p class="category">Categoría: Automóvil de Lujo</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 1. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c5.jpg" alt="Coche 2">
-=======
-            <div class="service-box luxury">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c5.jpg" alt="Coche 2">
->>>>>>> devlop/jorge
-                        <p>Camaro RS 2024</p>
-                        <p class="category">Categoría: Automóvil de Lujo</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 2. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c6.jpg" alt="Coche 3">
-=======
-            <div class="service-box luxury">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c6.jpg" alt="Coche 3">
->>>>>>> devlop/jorge
-                        <p>Audi TT RS 2023</p>
-                        <p class="category">Categoría: Automóvil de Lujo</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 3. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/C7.jpg" alt="Coche 4">
-=======
-            <div class="service-box intermediate">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/C7.jpg" alt="Coche 4">
->>>>>>> devlop/jorge
-                        <p>AUDI A4 2024</p>
-                        <p class="category">Categoría: Automóvil Intermedio</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 4. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c8.jpg" alt="Coche 5">
-=======
-            <div class="service-box intermediate">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c8.jpg" alt="Coche 5">
->>>>>>> devlop/jorge
-                        <p>BMW Series 1</p>
-                        <p class="category">Categoría: Automóvil Intermedio</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 5. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c9.jpg" alt="Coche 6">
-                        <p>Cupra Formentor</p>
-                        <p class="category">Categoría: Automóvil Intermedio</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 6. Detalles técnicos, características especiales y más.</p>
-=======
-            <div class="service-box intermediate">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c9.jpg" alt="Coche 6">
-                        <p>Cupra Formentor 2024</p>
-                        <p class="category">Categoría: Automóvil Intermedio</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 5. Detalles técnicos, características especiales y más.</p>
->>>>>>> devlop/jorge
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c10.jpeg" alt="Coche 7">
-                        <p>Pirus Plug In 2024</p>
-                        <p class="category">Categoría: Automóvil de Eléctrico</p>
-=======
-            <div class="service-box electric">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c10.jpeg" alt="Coche 7">
-                        <p>Pirus Plug In 2024</p>
-                        <p class="category">Categoría: Automóvil Eléctrico</p>
->>>>>>> devlop/jorge
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 7. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c11.jpg" alt="Coche 8">
-=======
-            <div class="service-box electric">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c11.jpg" alt="Coche 8">
->>>>>>> devlop/jorge
-                        <p>Tesla Model S 2024</p>
-                        <p class="category">Categoría: Automóvil Eléctrico</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 8. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c12.jpg" alt="Coche 9">
-=======
-            <div class="service-box electric">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c12.jpg" alt="Coche 9">
->>>>>>> devlop/jorge
-                        <p>JAC E10X</p>
-                        <p class="category">Categoría: Automóvil Eléctrico</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 9. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c13.jpg" alt="Coche 10">
-=======
-            <div class="service-box luxurySUV">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c13.jpg" alt="Coche 10">
->>>>>>> devlop/jorge
-                        <p>Cadillac Escalade 2023</p>
-                        <p class="category">Categoría: Camioneta de Lujo</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 10. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c14.jpg" alt="Coche 11">
-=======
-            <div class="service-box luxurySUV">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c14.jpg" alt="Coche 11">
->>>>>>> devlop/jorge
-                        <p>GMC Yukon 2024</p>
-                        <p class="category">Categoría: Camioneta de Lujo</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 11. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c15.jpg" alt="Coche 12">
-                        <p>Suburban Chevrolet 2024</p>
-                        <p class="category">Categoría: Automóvil de Lujo</p>
-=======
-            <div class="service-box luxurySUV">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c15.jpg" alt="Coche 12">
-                        <p>Suburban Chevrolet 2024</p>
-                        <p class="category">Categoría: Camioneta de Lujo</p>
->>>>>>> devlop/jorge
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 12. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c16.jpg" alt="Coche 13">
-=======
-            <div class="service-box intermediateSUV">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c16.jpg" alt="Coche 13">
->>>>>>> devlop/jorge
-                        <p>Tiguan VW 2024</p>
-                        <p class="category">Categoría: Camioneta Intermedia</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 13. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c17.jpg" alt="Coche 14">
-                        <p> X-Trail Nisan 2024</p>
-=======
-            <div class="service-box intermediateSUV">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c17.jpg" alt="Coche 14">
-                        <p>X-Trail Nissan 2024</p>
->>>>>>> devlop/jorge
-                        <p class="category">Categoría: Camioneta Intermedia</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 14. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-<<<<<<< HEAD
-            <div class="service-box">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="../frontend/assets/c18.jpg" alt="Coche 15">
-=======
-            <div class="service-box intermediateSUV">
-                <div class="service-inner">
-                    <div class="service-front">
-                        <img src="./assets/c18.jpg" alt="Coche 15">
->>>>>>> devlop/jorge
-                        <p>Trax Chevrolet 2024</p>
-                        <p class="category">Categoría: Camioneta Intermedia</p>
-                    </div>
-                    <div class="service-back">
-                        <p>Información adicional sobre el coche 15. Detalles técnicos, características especiales y más.</p>
-                        <a href="#" class="rent-button">Rentar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-<<<<<<< HEAD
-    <script src="../frontend/js/home.js"></script>
-=======
+        <div class="container mt-5">
+        <!-- Botones de filtro -->
+        <div class="filter-buttons text-center mb-4">
+            <button class="btn btn-outline-primary filter-btn" data-filter="all">Todos</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="Automóvil de Lujo">Automóvil de Lujo</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="Automóvil Intermedio">Automóvil Intermedio</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="Automóvil Eléctrico">Automóvil Eléctrico</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="Camioneta de Lujo">Camioneta de Lujo</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="Camioneta Intermedia">Camioneta Intermedia</button>
+        </div>
+        
+        <div class="row">
+            <?php foreach($carros as $registro){  ?>
+                <div class="col-md-4 mb-4 filter-item" data-category="<?php echo $registro['car_categoria']; ?>">
+                    <div class="card h-100 shadow-sm card-custom">
+                        <img src="<?php echo $registro['car_imagen']?>" class="card-img-top" alt="Imagen de <?php echo $registro['car_modelo']?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $registro['car_modelo']?></h5>
+                            <p class="card-text text-muted"><?php echo $registro['car_categoria']?></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Precio por día:</strong> $<?php echo number_format($registro['car_precio_dia'], 2); ?> MXN</li>
+                            <li class="list-group-item"><strong>Placas:</strong> <?php echo $registro['car_placas']?></li>
+                            <li class="list-group-item"><strong>Capacidad:</strong> <?php echo $registro['car_capacidad']?> pasajeros</li>
+                        </ul>
+                        <div class="card-body text-center">
+                            <a href="#" class="btn btn-primary">Rentar</a>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+
+
+</section>
+
     <section id="contact" class="about">
         <div class="about-container">
             <h2>Contacto</h2>
@@ -437,6 +142,26 @@
 
 
     <script src="./js/index.js"></script>
->>>>>>> devlop/jorge
+    <script>
+        //Función para los filtros
+document.addEventListener('DOMContentLoaded', function () {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const filterItems = document.querySelectorAll('.filter-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filterValue = button.getAttribute('data-filter');
+
+            filterItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+    </script>
 </body>
 </html>

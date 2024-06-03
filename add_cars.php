@@ -13,6 +13,10 @@
     require_once "database.php";
 
     if(isset($_POST['submit'])){
+
+      print_r($_POST);
+      print_r($_FILES);
+      
       $categoria = $_POST['categoria'];
       $modelo = $_POST['modelo'];
       $anio = $_POST['anio'];
@@ -21,12 +25,8 @@
       $precio = $_POST['precio'];
       $placas = $_POST['placas'];
 
-      if (isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] === UPLOAD_ERR_OK) {
-        $imagen = addslashes(file_get_contents($_FILES["imagen"]["tmp_name"]));
-      } else {
-        $imagen = null;
-      }
-
+      $imagen = (isset($_FILES["imagen"]["name"])?$_FILES["imagen"]["name"]:"");
+      
       $errors = array();
 
       if(empty($categoria) || empty($modelo) || empty($anio) || empty($capacidad) || empty($color) || empty($precio) || empty($placas) || empty($imagen)){
@@ -67,7 +67,18 @@
           $stmt->bindParam(':color', $color);
           $stmt->bindParam(':precio', $precio);
           $stmt->bindParam(':placas', $placas);
-          $stmt->bindParam(':imagen', $imagen);
+
+          //Código para adjuntar la fotografía
+          $fecha_foto = new DateTime();
+          $nombreArchivo_foto = ($imagen!='')?$fecha_foto->getTimestamp()."_".$_FILES["imagen"]["name"]:"";
+
+          $tmp_foto = $_FILES["imagen"]["tmp_name"];
+
+          if($tmp_foto!=""){
+            move_uploaded_file($tmp_foto, "./".$nombreArchivo_foto);
+          }
+
+          $stmt->bindParam(':imagen', $nombreArchivo_foto);
 
           $stmt->execute();
 
@@ -111,6 +122,7 @@
       <div class="form-group">
         <select id="capacidad" name="capacidad" class="form-select" aria-label="Default select example">
           <option value="">Selecciona la capacidad de pasajeros</option>
+          <option value="">2</option>
           <option value="5">5</option>
           <option value="8">8</option>
         </select>
@@ -132,10 +144,7 @@
 
       <div class="form-group">
         <div class="file-upload">
-          <input type="file" name="imagen" id="imagen" class="file-input" autocomplete="off" required>
-          <label for="imagen" class="file-label">
-            <i class="fas fa-cloud-upload-alt"></i> Foto del modelo Max 500KB
-          </label>  
+          <input type="file" name="imagen" id="imagen" class="file-input" autocomplete="off" required> 
         </div>
       </div>
 
