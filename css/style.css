@@ -1,88 +1,14 @@
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: sans-serif;
-    line-height: 1.5;
-    min-height: 100vh;
-    background: #fffdfd;
-    flex-direction: column;
-    margin: 0;
-  }
-  
-  .main {
-    background-color: rgb(253, 254, 255);
-    border-radius: 15px;
-    padding: 10px 20px;
-    transition: transform 0.2s;
-    width: 500px;
-    text-align: center;
-  }
-  
-  h1 {
-    color: #1ea4cd;
-    position: relative;
-  }
-  
-  label {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    text-align: left;
-    color: #555;
-    font-weight: bold;
-  }
-  
-  input {
-    display: block; /*Hace que cada elemento sea como bloques haciendo que cada uno ocupe una nueva linea*/
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px; /*Para hacer mas ancho la caja del input*/
-    box-sizing: border-box; /*Para que el input se ajuste al tamaño de la caja*/
-    border: 1px solid #ddd; /*Para establecer el color de la caja del input*/
-    border-radius: 30px; /*Que tan curvo va a estar la caja del input*/
-  }
-  
-  
-  .Registro {
-    background-color: gold;
-  }
-  
-  .btn-sesion {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /*Para el texto debajo de la contraseña*/
-  p {
-    font-size: 11px;
-    color: #050505;
-    margin-top: 5px;
-    text-align: left;
-  }
-
-  .register-link {
-    text-align: center;
-    margin-top: 20px;
-    color:#000000;
-}
-
-.register-link a {
-    color: #1ea4cd; /* Color verde para el enlace */
-    text-decoration: none;
-}
-
-.register-link a:hover {
-  text-decoration: underline; /* Subrayado al pasar el cursor */
   padding: 50px;
 }
 
 .container {
   max-width: 600px;
   margin: 0 auto;
-  border-radius: 15px;
   padding: 50px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.form-group {
+  margin-bottom: 30px;
 }
