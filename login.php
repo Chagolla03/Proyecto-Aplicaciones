@@ -12,6 +12,7 @@
 
   <?php
 
+
     if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["login"])){
       $email = $_POST["email"];
       $pass = $_POST["password"];
@@ -29,7 +30,7 @@
 
       if($user){
         if(password_verify($pass, $user["cli_contra"])){
-          header("Location: index.html");
+          header("Location: index.php");
           die();
         } else {
           echo "<div class='alert alert-danger'>La contraseña no coincide</div>";

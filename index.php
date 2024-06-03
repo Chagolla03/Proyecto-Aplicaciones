@@ -21,6 +21,7 @@
     </style>
 </head>
 <body>
+    
     <header>
         <nav>
             <div class="nav-container">
@@ -113,7 +114,7 @@
                             <li class="list-group-item"><strong>Capacidad:</strong> <?php echo $registro['car_capacidad']?> pasajeros</li>
                         </ul>
                         <div class="card-body text-center">
-                            <a href="#" class="btn btn-primary">Rentar</a>
+                            <a href="renta.php" class="btn btn-primary">Rentar</a>
                         </div>
                     </div>
                 </div>
