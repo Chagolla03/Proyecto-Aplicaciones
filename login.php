@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,8 @@
   <div class="container">
 
   <?php
-    if(isset($_POST["login"])){
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["login"])){
       $email = $_POST["email"];
       $pass = $_POST["password"];
 

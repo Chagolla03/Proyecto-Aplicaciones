@@ -24,6 +24,7 @@
         <th>Color</th>
         <th>Precio por dia</th>
         <th>placas</th>
+        <th>Estado</th>
         <th>Imagen</th>
       </tr>
     </thead>
@@ -39,41 +40,35 @@
         $stmt->execute();
 
         //recuperamos los datos
-        $carros = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        //leemos los datos de cada fila
-        if ($carros && count($carros) > 0) {
-  
-          foreach ($carros as $carro) {
-              echo '<tr>';
-              echo '<td>' . htmlspecialchars($carro['car_id']) . '</td>';
-              echo '<td>' . htmlspecialchars($carro['car_categoria']) . '</td>';
-              echo '<td>' . htmlspecialchars($carro['car_modelo']) . '</td>';
-              echo '<td>' . htmlspecialchars($carro['car_anio']) . '</td>';
-              echo '<td>' . htmlspecialchars($carro['car_capacidad']) . '</td>';
-              echo '<td>' . htmlspecialchars($carro['car_color']) . '</td>';
-              echo '<td>' . htmlspecialchars($carro['car_precio_dia']) . '</td>';
-              echo '<td>' . htmlspecialchars($carro['car_placas']) . '</td>';
-              echo '<td><img src="data:image/jpeg;base64,' . base64_encode($carro['car_imagen']) . '" alt="Imagen del carro" style="width:100px; height:auto;"></td>';
-              echo '<td>';
-              echo '<a class="btn btn-primary btn-sm" href="admin_edit_car.php?id=' . htmlspecialchars($carro['car_id']) . '">Edit</a> ';
-              echo '<a class="btn btn-danger btn-sm" href="admin_delete_car.php?id=' . htmlspecialchars($carro['car_id']) . '">Delete</a>';
-              echo '</td>';
-              echo '<tr>';
-          }
-      } else {
-          echo '<div class="alert alert-warning">No se encontraron registros.</div>';
-      }
-        
-
+        $carros = $stmt->fetchAll(PDO::FETCH_ASSOC);        
       } catch(PDOException $e){
         echo "Error en la consulta: " . $e->getMessage();
       }
-      
       ?>
+
+      <?php foreach($carros as $registro){  ?>
+
+    <tr>
+      <th scope="row"><?php echo $registro['car_id']?></th>
+      <td><?php echo $registro['car_categoria']?></td>
+      <td><?php echo $registro['car_modelo']?></td>
+      <td><?php echo $registro['car_anio']?></td>
+      <td><?php echo $registro['car_capacidad']?></td>
+      <td><?php echo $registro['car_color']?></td>
+      <td><?php echo $registro['car_precio_dia']?></td>
+      <td><?php echo $registro['car_placas']?></td>
+      <td><?php echo $registro['car_estatus']?></td>
+
+      <td><img src="<?php echo $registro['car_imagen']?>" alt="Imagen de <?php echo $registro['car_modelo']?>" class="img-fluid" style="max-width: 200px; max-height: 200px;"></td>   
+      <td>
+        <a class="btn btn-primary btn-sm" href="admin_edit_car.php?id=<?php echo $registro['car_id']; ?>" role="button">Edit</a>
+        <a class="btn btn-danger btn-sm" href="admin_delete_car.php?id=<?php echo $registro['car_id']; ?>" role="button">Delete</a>
+      </td>
+    </tr>
       
-    
-      
+
+      <?php } ?>
+
     </tbody>
    </table>
 
