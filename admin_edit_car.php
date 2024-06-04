@@ -124,7 +124,6 @@
       <div class="form-group">
         <select id="modelo" name="modelo" class="form-select" aria-label="Default select example">
           <option value="">Selecciona un modelo</option>
-          <!-- Aquí deberías cargar los modelos disponibles -->
         </select>
       </div>
 
@@ -150,7 +149,6 @@
       <div class="form-group">
         <select id="color" name="color" class="form-select" aria-label="Default select example">
           <option value="">Selecciona el color del modelo</option>
-          <!-- Aquí deberías cargar los colores disponibles -->
         </select>
       </div>
 

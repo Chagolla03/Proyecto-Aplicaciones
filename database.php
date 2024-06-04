@@ -7,14 +7,11 @@ $password = "root";
 
 try {
   // PDO = PHP Data Objects
-  $conn = new PDO($dsn, $username, $password);
-  
-  // conn ya no es una variable, ya es un objeto
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $pdo = new PDO($dsn, $username, $password);
   
-  // conn ya no es una variable, ya es un objeto
+  // pdo ya no es una variable, ya es un objeto
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  
 } catch (PDOException $e){
   echo "Error al conectar la base de datos: " . $e->getMessage();
 }

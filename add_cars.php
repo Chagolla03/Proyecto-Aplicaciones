@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration form</title>
+  <title>Add Cars</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -35,6 +35,10 @@
 
       if(strlen($placas) < 9){
         array_push($errors, "Las placas deben ser 9 caracteres incluido los guiones");
+      }
+
+      if (strlen($placas) > 9){
+        array_push($errors, "No es posible registrar las placas");
       }
 
       //Verificamos que las placas no se repitan
@@ -122,7 +126,7 @@
       <div class="form-group">
         <select id="capacidad" name="capacidad" class="form-select" aria-label="Default select example">
           <option value="">Selecciona la capacidad de pasajeros</option>
-          <option value="">2</option>
+          <option value="2">2</option>
           <option value="5">5</option>
           <option value="8">8</option>
         </select>

@@ -11,7 +11,7 @@
     <div class="container">
         <div class="card">
             <h2>Renta de Carros</h2>
-            <form action="pago.html" method="get">
+            <form action="procesar_renta.php" method="post">
                 <label for="ciudad">Ciudad:</label>
                 <input type="text" id="ciudad" name="ciudad" required placeholder="Ingresa la ciudad">
                 
@@ -19,16 +19,18 @@
                 <input type="text" id="lugar-renta" name="lugar-renta" required placeholder="Ingresa el lugar de renta">
                 
                 <label for="fecha-renta">Fecha de Renta:</label>
-                <input type="date" id="fecha-renta" name="fecha-renta" required>
+                <input type="date" id="fecha-renta" name="fecha_renta" required>
                 
                 <label for="hora-renta">Hora de Renta:</label>
-                <input type="time" id="hora-renta" name="hora-renta" required>
+                <input type="time" id="hora-renta" name="hora_renta" required>
                 
                 <label for="fecha-devolucion">Fecha de Devolución:</label>
-                <input type="date" id="fecha-devolucion" name="fecha-devolucion" required>
+                <input type="date" id="fecha-devolucion" name="fecha_devolucion" required>
                 
                 <label for="hora-devolucion">Hora de Devolución:</label>
-                <input type="time" id="hora-devolucion" name="hora-devolucion" required>
+                <input type="time" id="hora-devolucion" name="hora_devolucion" required>
+                
+                <input type="hidden" name="car_id" value="<?php echo $_GET['id']; ?>"> <!-- ID del carro desde la URL -->
                 
                 <button type="submit">Rentar</button>
             </form>

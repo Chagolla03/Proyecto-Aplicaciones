@@ -12,17 +12,15 @@
 
   <?php
 
-
+    session_start();
     if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["login"])){
       $email = $_POST["email"];
       $pass = $_POST["password"];
 
       require_once "database.php";
       $sql_login = "SELECT * FROM cliente WHERE cli_correo = :email";
-      $stmt = $conn->prepare($sql_login);
-      $stmt->bindParam(":email", $email, PDO::PARAM_STR);
       $stmt = $pdo->prepare($sql_login);
-      $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+      $stmt->bindParam(":email", $email, PDO::PARAM_STR);
       $stmt->execute();
 
       //se obtiene el resultado como un array asociativo
@@ -30,6 +28,7 @@
 
       if($user){
         if(password_verify($pass, $user["cli_contra"])){
+          $_SESSION['user_id'] = $user["cli_id"];
           header("Location: index.php");
           die();
         } else {
