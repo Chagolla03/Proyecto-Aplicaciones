@@ -17,6 +17,20 @@
         .filter-buttons .btn {
             margin: 0.5rem;
         }
+
+        .form-group {
+            margin-bottom: 1.5rem; /* Añadir espacio entre los campos del formulario */
+        }
+
+        .form-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2rem; 
+        }
+        .register-link {
+            margin-left: 1rem; 
+        }
     </style>
 </head>
 <body>
@@ -154,14 +168,18 @@
                 </div>
                 <div class="modal-body">
                     <form action="login.php" method="post">
+
                         <div class="form-group">
                             <input type="email" placeholder="Ingresa tu correo electónico" name="email" class="form-control">
                         </div>
+
                         <div class="form-group">
                             <input type="password" placeholder="Ingresa tu contraseña" name="password" class="form-control">
                         </div>
-                        <div class="form-btn">
+
+                        <div class="form-actions">
                             <input type="submit" value="Iniciar Sesión" name="login" class="btn btn-primary">
+                            <a href="registration.php" class="register-link">¿No tienes cuenta? Regístrate</a>
                         </div>
                     </form>
                 </div>
@@ -169,13 +187,16 @@
         </div>
     </div>
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById('login-btn').addEventListener('click', function() {
             var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
             loginModal.show();
         });
+    </script>
 
+    <script>
         // Función para los filtros
         document.addEventListener('DOMContentLoaded', function () {
             const filterButtons = document.querySelectorAll('.filter-btn');
@@ -198,3 +219,4 @@
     </script>
 </body>
 </html>
+
