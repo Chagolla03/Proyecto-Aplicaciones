@@ -6,32 +6,6 @@
     <title>Renta de Autos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/index.css">
-    <style>
-        .card-custom {
-            background-color: #f8f9fa; /* Gris desvanecido */
-        }
-        .card-custom img {
-            height: 200px;
-            object-fit: cover;
-        }
-        .filter-buttons .btn {
-            margin: 0.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem; /* Añadir espacio entre los campos del formulario */
-        }
-
-        .form-actions {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 2rem; 
-        }
-        .register-link {
-            margin-left: 1rem; 
-        }
-    </style>
 </head>
 <body>
     <?php
@@ -39,47 +13,42 @@
     ?>
     
     <header>
-        <nav>
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="./assets/logo.png" alt="Logo de la empresa">
-                </div>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#about">Acerca de</a></li>
-                    <li><a href="#services">Servicios</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                    <?php if (isset($_SESSION['user_id'])): ?>
-                        <li><a href="logout.php">Cerrar Sesión</a></li>
-                    <?php else: ?>
-                        <li><a href="#" id="login-btn">Iniciar Sesión</a></li>
-                    <?php endif; ?>
-                </ul>
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="Logo de la empresa">
+                <p>Autos BJX</p>
             </div>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#about">Acerca de</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="logout.php">Cerrar Sesión</a></li>
+                <?php else: ?>
+                    <li><a href="#" id="login-btn">Iniciar Sesión</a></li>
+                <?php endif; ?>
+            </ul>
         </nav>
     </header>
     
-    <div class="hero-container">
-        <div class="image-container">
-            <div class="title">
-                <h1>Renta de Autos BJX</h1>
-                <p>Encuentra el auto perfecto para tu viaje</p>
-            </div>
-            <img src="./assets/c1.png" alt="Imagen de ejemplo">
+    <section class="hero-container">
+        <div class="hero-title">
+            <h1>Renta de Autos BJX</h1>
+            <p>Encuentra el auto perfecto para tu viaje</p>
         </div>
-    </div>
+        <img src="./assets/c1.png" alt="Imagen de ejemplo">
+    </section>
+
     
-    <section id="about" class="about">
-        <div class="about-container">
-            <h2>Acerca de Nosotros</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="./assets/c4.jpg" alt="Acerca de nosotros">
-                </div>
-                <div class="about-text">
-                    <p>Somos una empresa dedicada a proporcionar los mejores vehículos para cualquier necesidad de transporte en el estado de Guanajuato. 
-                        Con años de experiencia en el mercado, garantizamos la satisfacción de nuestros clientes ofreciendo un servicio de calidad y vehículos de alta gama.</p>
-                </div>
+    <section id="about" class="section">
+        <h2>Acerca de Nosotros</h2>
+        <div class="section-content">
+            <div class="section-image">
+                <img src="./assets/c4.jpg" alt="Acerca de nosotros">
+            </div>
+            <div class="section-text">
+                <p>Somos una empresa dedicada a proporcionar los mejores vehículos para cualquier necesidad de transporte en el estado de Guanajuato. 
+                    Con años de experiencia en el mercado, garantizamos la satisfacción de nuestros clientes ofreciendo un servicio de calidad y vehículos de alta gama.</p>
             </div>
         </div>
     </section>
@@ -104,10 +73,11 @@
         <h2>Nuestros Servicios</h2>
         <p>Ofrecemos una amplia variedad de vehículos para todas tus necesidades de transporte.</p>
 
-        <div class="container mt-5">
+        <div class="content-data">
             <!-- Botones de filtro -->
-            <div class="filter-buttons text-center mb-4">
-                <button class="btn btn-outline-primary filter-btn" data-filter="all">Todos</button>
+            <div class="filter-buttons text-center pb-4">
+                <p class="filter-text">Filtra por Categorias:</p>
+                <button class="btn btn-outline-primary filter-btn active" data-filter="all">Mostrar Todos</button>
                 <button class="btn btn-outline-primary filter-btn" data-filter="Automóvil de Lujo">Automóvil de Lujo</button>
                 <button class="btn btn-outline-primary filter-btn" data-filter="Automóvil Intermedio">Automóvil Intermedio</button>
                 <button class="btn btn-outline-primary filter-btn" data-filter="Automóvil Eléctrico">Automóvil Eléctrico</button>
@@ -143,20 +113,54 @@
         </div>
     </section>
 
-    <section id="contact" class="about">
-        <div class="about-container">
-            <h2>Contacto</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="./assets/c2.jpg" alt="Contacto">
-                </div>
-                <div class="about-text">
-                    <p>Somos una empresa dedicada a proporcionar los mejores vehículos para cualquier necesidad de transporte en el estado de Guanajuato. 
-                        Con años de experiencia en el mercado, garantizamos la satisfacción de nuestros clientes ofreciendo un servicio de calidad y vehículos de alta gama.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    <footer class="footer text-center">
+    <div class="footer-section">
+      <div class="logo">
+        <img src="./assets/logo.png" alt="Logo de la empresa">
+        <p>Autos BJX</p>
+      </div>
+      <div class="social-icons">
+        <a href="#"><img src="./assets/facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="./assets/instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="./assets/youtube.svg" alt="YouTube"></a>
+        <a href="#"><img src="./assets/twitter.svg" alt="Twitter"></a>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div class="footer-section">
+      <div class="footer-links">
+        <h5>Gestiona tu reserva</h5>
+        <a onClick="window.location.href='detalle.php'" href="#">Revisar mis Reservaciones</a>
+        <a href="#">Facturación</a>
+        <a href="#">Obtener promociones</a>
+      </div>
+      <div class="footer-links">
+        <h5>Más información</h5>
+        <a href="#">Políticas y requisitos de renta</a>
+        <a href="#">Formas de pago</a>
+        <a href="#">Aviso de Privacidad</a>
+        <a href="#">Preguntas Frecuentes</a>
+      </div>
+      <div class="footer-links">
+        <h5>Contáctanos</h5>
+        <p>Reservaciones: +52 462 123 7337</p>
+        <p>Servicio al cliente: +52 462 123 7337</p>
+        <p>contacto@autosbjx.com</p>
+        <p>Atención por WhatsApp</p>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div class="footer-section">
+      <h5>Formas de pago</h5>
+      <img style="filter: invert(1);" src="./assets/visa.png" alt="Visa">
+      <img style="filter: invert(1);" src="./assets/mastercard.png" alt="MasterCard">
+      <img style="filter: invert(1);" src="./assets/amex.png" alt="American Express">
+      <img style="filter: invert(1);" src="./assets/paypal.png" alt="Paypal">
+      <img src="./assets/esr.png" alt="ESR">
+      <img src="./assets/safe-travels.png" alt="Safe Travels">
+    </div>
+  </footer>
 
     <!-- Formulario de inicio de sesión modal -->
     <div class="modal" tabindex="-1" id="loginModal">
@@ -168,25 +172,23 @@
                 </div>
                 <div class="modal-body">
                     <form action="login.php" method="post">
-
                         <div class="form-group">
                             <input type="email" placeholder="Ingresa tu correo electónico" name="email" class="form-control">
                         </div>
-
                         <div class="form-group">
                             <input type="password" placeholder="Ingresa tu contraseña" name="password" class="form-control">
                         </div>
-
-                        <div class="form-actions">
+                        <div class="form-btn">
                             <input type="submit" value="Iniciar Sesión" name="login" class="btn btn-primary">
-                            <a href="registration.php" class="register-link">¿No tienes cuenta? Regístrate</a>
                         </div>
                     </form>
+                </div>
+                <div class="modal-footer">
+                    <p>¿No tienes una cuenta? <a href="registration.php">Regístrate</a></p>
                 </div>
             </div>
         </div>
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -194,29 +196,38 @@
             var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
             loginModal.show();
         });
-    </script>
 
-    <script>
         // Función para los filtros
         document.addEventListener('DOMContentLoaded', function () {
             const filterButtons = document.querySelectorAll('.filter-btn');
             const filterItems = document.querySelectorAll('.filter-item');
 
+            function filterItemsByCategory(filterValue) {
+                filterItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            // Iniciamos con el boton "Todos" activo
+            filterItemsByCategory('all');
+
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    const filterValue = button.getAttribute('data-filter');
+                    // Remueve la clase active de todos los botones
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
 
-                    filterItems.forEach(item => {
-                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
+                    // Agrega la clase active al botón seleccionado
+                    button.classList.add('active');
+
+                    const filterValue = button.getAttribute('data-filter');
+                    filterItemsByCategory(filterValue);
                 });
             });
         });
     </script>
 </body>
 </html>
-

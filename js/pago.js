@@ -9,7 +9,21 @@ document.getElementById('paymentForm').addEventListener('submit', function(event
       cardNumberError.style.display = 'block';
   } else {
       cardNumberError.style.display = 'none';
-      alert('Pago realizado con éxito');
-      // Aquí puedes agregar la lógica para enviar el formulario
+
+      // Crear un objeto FormData con los datos del formulario
+      let formData = new FormData(this);
+
+      // Enviar el formulario usando Fetch API
+      fetch('procesar_pago.php', {
+          method: 'POST',
+          body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+          document.body.innerHTML = data; // Muestra la respuesta del servidor
+      })
+      .catch(error => console.error('Error:', error));
   }
 });
+
+
