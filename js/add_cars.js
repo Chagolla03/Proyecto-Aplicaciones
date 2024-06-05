@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "Camaro RS": ["Amarillo", "Blanco", "Negro"],
     "Audi TT RS": ["Blanco Ibis (sólido)", "Gris Nardo (sólido)", "Naranja pulso (sólido)","Rojo Tango (metalizado)"],
     "Audi A4": ["Azul Navarra (metalizado)","Blanco Arkona (sólido)","Gris Daytona (efecto perla)","Negro Brillante (sólido)"],
-    "BMW Serie 1": ["Pintura metalizada Melbourne Rot","Pintura metalizada Misano Blau","Pintura sólida Alpinweiss", "Pintura sólida Negra"],
+    "BMW Serie 1": ["Melbourne Rot","Pintura metalizada Misano Blau","Pintura sólida Alpinweiss", "Pintura sólida Negra"],
     "Cupra Formentor": ["Azul Fiord (suave)", "Azul Petrol (mate)", "Blanco (suave)", "Negro Midnight (metalizado)"],
     "Toyota Prius Plug-in": ["Azul Ipanema", "Blanco Classic", "Gris Grafito", "Rojo Emoción"],
     "Tesla Model S": ["Metálico azul profundo", "Multicapa blanco perla", "Negro Sólido", "Stealth Grey","Ultra Red"],
